@@ -64,6 +64,7 @@
 								<li><a href="<?php echo base_url()?>index.php/Shoppingcart/profile"><i class="fa fa-user"></i> Account</a></li>
 								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
 								<li><a href="<?php echo base_url()?>index.php/Shoppingcart/login"><i class="fa fa-lock"></i> Login</a></li>
+								<li><a href="<?php echo base_url()?>index.php/Shoppingcart/edituser"><i class="fa fa-lock"></i>Edit Profile</a></li>
 							</ul>
 						</div>
 					</div>

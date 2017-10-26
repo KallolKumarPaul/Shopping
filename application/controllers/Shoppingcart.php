@@ -39,8 +39,6 @@ class Shoppingcart extends CI_Controller
             $mobile=$this->input->post('mobile');
             $ins=$this->Shopping_model->user_insert($name,$email,$password,$address,$pincode,$location,$gender,$mobile);
             redirect('Shoppingcart/main');
-
-            // $this->load->view('main');
         }
         else
         {
@@ -69,7 +67,7 @@ class Shoppingcart extends CI_Controller
             }
         }
     }
-    public function profile()
+    function profile()
     {  
         if($this->session->userdata('id')!='')
         {
@@ -84,18 +82,89 @@ class Shoppingcart extends CI_Controller
         {
             redirect('Shoppingcart/main');
         }
-    } 
-    public function get_profile($id)
+    }
+    function profile_input() 
+    {
+        if ($this->input->post('logout')) 
+        {
+            $this->session->sess_destroy();
+            redirect('Shoppingcart/main');
+        }
+        if ($this->input->post('imageupload')) 
+        {
+            $this->load->model('Shopping_model');
+            $data=$this->Shopping_model->get_profile_data($id);
+            $id=$this->session->userdata('id');
+            $config['upload_path']='public/upload/';
+            $config['allowed_types']='gif|jpg|png|jpeg';
+            $this->load->library('upload', $config);
+            if ( ! $this->upload->do_upload('img'))
+            {
+                $error = array('error' => $this->upload->display_errors());
+                $this->load->view('Shoppingcart', $error);
+            }
+            else
+            {
+                $data = array('upload_data' => $this->upload->data());
+                $file_name=$data['upload_data']['file_name'];
+                $ins=$this->Shopping_model->image_insert($file_name);
+                echo "$ins";
+                redirect('Shoppingcart/main');
+            }
+        }
+    }
+    function get_profile($id)
     {
         $this->load->model('Shopping_model');
         $data['profile']=$this->Shopping_model->get_profile_data($id);
         $this->load->view('edit_user',$data);
-        $this->load->view('passchnge',$data);
-
     }
-    public function logout()
+    function edituser()
+    {  
+        if($this->session->userdata('id')!='')
+        {
+        $this->load->model('Shopping_model');
+        $id=$this->session->userdata('id');
+        $data['edituser']=$this->Shopping_model->get_profile_data($id);
+        $this->load->view('header');
+        $this->load->view('edit_user',$data);
+        $this->load->view('footer');
+        }
+        else
+        {
+            redirect('Shoppingcart/main');
+        }
+    }
+    function edit()
     {
-        $this->session->sess_destroy();
-        redirect('Shoppingcart/main');
+        if ($this->input->post('update'))
+        {
+            $this->load->model('Shopping_model');
+            $name=$this->input->post('name');
+            $address=$this->input->post('address');
+            $pincode=$this->input->post('pincode');
+            $location=$this->input->post('city');
+            $gender=implode(",",$this->input->post('gen'));
+            $mobile=$this->input->post('mobile');
+            if($_FILES['img']=='')
+            {
+                $file_name='';
+            }
+            $config['upload_path']='public/upload/';
+            $config['allowed_types']='gif|jpg|png|jpeg';
+            $this->load->library('upload', $config);
+            if ( ! $this->upload->do_upload('img'))
+            {
+                $error = array('error' => $this->upload->display_errors());
+                $this->load->view('edit_user', $error);
+            }
+            else
+            {
+                $data = array('upload_data' => $this->upload->data());
+                $file_name=$data['upload_data']['file_name'];
+            }
+            $ins=$this->Shopping_model->update($name,$address,$pincode,$location,$gender,$mobile,$file_name);
+            redirect('Shoppingcart/profile');
+       }
     }
 }
