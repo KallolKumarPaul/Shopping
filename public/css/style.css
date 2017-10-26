@@ -1,0 +1,38 @@
+body{
+  color: white;
+  background-color:pink;
+}
+h1{
+  text-align: center;
+}
+#cart-btn{
+  border-style: solid;
+  /*float:left;*/
+  margin-left: 1230px;
+  margin-right: 26px;
+  margin-bottom: 10px;
+
+}
+#log-btn{
+  border-style: solid;
+  margin-left: 1200px;
+  margin-right:10px;
+  
+  /*margin-bottom: 100px;*/
+  margin-top: -120px;
+}
+#signup-btn{
+  border-style: solid;
+  float:left;
+  margin-left: 1200px;
+}
+
+#product{
+  text-align: center;
+  padding: 50px;
+  margin-top: 200px;
+  margin-left:30px;
+  border-style: solid;
+  box-shadow: 5px 5px 5px #888888;
+  float: left;
+}
