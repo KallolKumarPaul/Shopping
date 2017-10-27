@@ -1,0 +1,66 @@
+
+#email{
+  margin-bottom: 10px;
+}
+
+#msg{
+  font-family: sans-serif;
+  margin-bottom: 20px;
+  margin-left: 1%;
+  color: red;
+  font-size: 16;
+}
+#bar{
+  border:2px solid grey;
+}
+#main{
+		margin-top: 40px;
+		margin-right: 30px;
+		margin-left: 30px;
+		border:2px solid grey;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		background-color: #cbf0d4 ;
+		border-radius: 5px;
+		box-shadow: 3px 2px 6px green;
+}
+#login-btn{
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  background-color: #f46f30;
+}
+h1{
+  margin-left: 100px;
+}
+#img{
+  margin-left: 300px;
+  margin-bottom: -20px;
+  padding-bottom: 0px;
+  height: 1px;
+  width: 10px;
+}
+#img1{
+    margin-left: -10px;
+    margin-bottom: 10px;
+    position: absolute;
+    margin-top: 10px;
+}
+#log{
+  margin-left: 390px;
+  margin-right: 300px;
+  margin-top: -90px;
+
+}
+input{
+  height: 35px;h1{
+    margin-left: 100px;
+  }
+  width: 350pxadius: 5px;
+  font-size: 17px;
+  boxshadw: 2px 0px bottomck-2
+}
+
+im
+  borderrelativersight: 1px;
+width: 10px;;
