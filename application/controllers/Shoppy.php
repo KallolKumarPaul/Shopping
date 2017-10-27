@@ -3,9 +3,12 @@
   {
     function index()
     {
-      $this->load->view('header');
-      $this->load->view('main');
-      $this->load->view('footer');
+		$this->load->model('product_model');
+		// echo "hi";die;
+		$data['product']=$this->product_model->get_product();
+      // $this->load->view('header_logout');
+      $this->load->view('main',$data);
+      // $this->load->view('footer');
     }
     function seller_log(){
       $this->load->view('seller_log');
@@ -23,9 +26,12 @@
         echo $value['name'];
       }
     }
-      function checkout()
-      {
-        $this->load->view('checkout');
-      }
+  	function checkout()
+  	{
+   		 $this->load->view('checkout');
+  	}
+  	function add_to_cart($pid){
+  		echo "$pid";
+  	}
   }
  ?>

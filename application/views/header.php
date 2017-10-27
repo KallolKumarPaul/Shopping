@@ -1,3 +1,4 @@
+
 <html>
 <head>
     <meta charset="utf-8">
@@ -63,7 +64,7 @@
 							<ul class="nav navbar-nav">
 								<li><a href="<?php echo base_url()?>index.php/Shoppingcart/profile"><i class="fa fa-user"></i> Account</a></li>
 								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-								<li><a href="<?php echo base_url()?>index.php/Shoppingcart/login"><i class="fa fa-lock"></i> Login</a></li>
+								<li><a href="<?php echo base_url()?>index.php/Shoppingcart/logout"><i class="fa fa-lock"></i> Logout</a></li>
 								<li><a href="<?php echo base_url()?>index.php/Shoppingcart/edituser"><i class="fa fa-lock"></i>Edit Profile</a></li>
 							</ul>
 						</div>
@@ -98,8 +99,8 @@
                                 </li> 
 								<li class="dropdown"><a href="#">Sell<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-                                        <li><a href="<?php echo base_url()?>index.php/Shoppingcart/login">Login</a></li>
-										<li><a href="<?php echo base_url()?>index.php/Shoppingcart/registration_view">Registration</a></li>
+                                        <li><a href="#">Login</a></li>
+										<li><a href="#">Registration</a></li>
                                     </ul>
                                 </li> 
 								

@@ -12,6 +12,12 @@ class Shoppingcart extends CI_Controller
         $this->load->view('main');
         $this->load->view('footer');
     }
+    function main1()
+    {
+        $this->load->view('header_logout');
+        $this->load->view('main');
+        $this->load->view('footer');
+    }
     function registration_view()
     {
         $this->load->view('header');
@@ -20,7 +26,7 @@ class Shoppingcart extends CI_Controller
     }
     function login()
     {
-        $this->load->view('header');
+        $this->load->view('header_logout');
         $this->load->view('signin');
         $this->load->view('footer');
     }
@@ -58,7 +64,7 @@ class Shoppingcart extends CI_Controller
                 $id = $login[0]['id'];
                 $this->session->set_userdata('id',$id);
                 $msg=$this->session->set_flashdata('success','Login successfull');
-                redirect('Shoppingcart/main');
+                redirect('Shoppy');
             }
             else
             {
@@ -82,6 +88,12 @@ class Shoppingcart extends CI_Controller
         {
             redirect('Shoppingcart/main');
         }
+    }
+    function logout()
+    {
+        $this->session->sess_destroy();
+        redirect('Shoppy') ;
+
     }
     function profile_input() 
     {
