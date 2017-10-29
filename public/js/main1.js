@@ -2,6 +2,7 @@ $(document).ready(function(){
   $("#search").blur(function(){
       $("#sear").html('');
   });
+
     $("#search").keypress(function(e){
       var v = $("#search").val();
       if(e.which == 13) {

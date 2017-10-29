@@ -1,18 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include('header.php')?>
-<body>
+    <!-- <?php include('header_logout')?> -->
+<body onload="typeWriter()">
   <div id="main">
-  <h1 style="margin-left:500px;">Sell Everything</h1>
+
+    <script>
+    var i = 0;
+    var txt = 'Sell Everything you want on a click';
+    var speed = 50;
+    function typeWriter() {
+      if (i < txt.length) {
+        document.getElementById("demo").innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+    </script>
+
+  <h1 id="demo" style="margin-left:430px;"></h1>
+  <div id="head"></div>
   <div id="img1"><img src="<?php echo base_url()?>public/images/shop/Shopping.png"></img></div>
   <div id="log">
 	<section id="form"><!--form-->
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-4 col-sm-offset-1">
-          <div id="msg"><?php if(isset($m)){
-            echo $m;
+          <div id="msg"><?php if($this->session->flashdata('msg')!==''){
+            echo $this->session->flashdata('msg');
           } ?></div>
           <div id="img"><img src="<?php echo base_url()?>public/images/shop/badge.png" style="height: 100px;
           width: 100px;"></div>

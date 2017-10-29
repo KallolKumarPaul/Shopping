@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Shoppingcart extends CI_Controller 
+class Shoppingcart extends CI_Controller
 {
 	public function index()
 	{
@@ -8,19 +8,25 @@ class Shoppingcart extends CI_Controller
 	}
     function main()
     {
+        $this->load->view('header_logout');
+        $this->load->view('main');
+        $this->load->view('footer');
+    }
+    function main1()
+    {
         $this->load->view('header');
         $this->load->view('main');
         $this->load->view('footer');
     }
     function registration_view()
     {
-        $this->load->view('header');
+        $this->load->view('header_logout');
         $this->load->view('shopping-user');
         $this->load->view('footer');
     }
     function login()
     {
-        $this->load->view('header');
+        $this->load->view('header_logout');
         $this->load->view('signin');
         $this->load->view('footer');
     }
@@ -38,7 +44,7 @@ class Shoppingcart extends CI_Controller
             $gender=implode(",",$this->input->post('gen'));
             $mobile=$this->input->post('mobile');
             $ins=$this->Shopping_model->user_insert($name,$email,$password,$address,$pincode,$location,$gender,$mobile);
-            redirect('Shoppingcart/main');
+            redirect('Shoppingcart/login');
         }
         else
         {
@@ -47,7 +53,7 @@ class Shoppingcart extends CI_Controller
     }
     function login_user()
     {
-        if ($this->input->post('submit')) 
+        if ($this->input->post('submit'))
         {
             $this->load->model('Shopping_model');
             $email=$this->input->post('email');
@@ -58,7 +64,7 @@ class Shoppingcart extends CI_Controller
                 $id = $login[0]['id'];
                 $this->session->set_userdata('id',$id);
                 $msg=$this->session->set_flashdata('success','Login successfull');
-                redirect('Shoppingcart/main');
+                redirect('Shoppy');
             }
             else
             {
@@ -68,7 +74,7 @@ class Shoppingcart extends CI_Controller
         }
     }
     function profile()
-    {  
+    {
         if($this->session->userdata('id')!='')
         {
         $this->load->model('Shopping_model');
@@ -83,14 +89,20 @@ class Shoppingcart extends CI_Controller
             redirect('Shoppingcart/main');
         }
     }
-    function profile_input() 
+    function logout()
     {
-        if ($this->input->post('logout')) 
+        $this->session->sess_destroy();
+        redirect('Shoppy') ;
+
+    }
+    function profile_input()
+    {
+        if ($this->input->post('logout'))
         {
             $this->session->sess_destroy();
             redirect('Shoppingcart/main');
         }
-        if ($this->input->post('imageupload')) 
+        if ($this->input->post('imageupload'))
         {
             $this->load->model('Shopping_model');
             $data=$this->Shopping_model->get_profile_data($id);
@@ -120,7 +132,7 @@ class Shoppingcart extends CI_Controller
         $this->load->view('edit_user',$data);
     }
     function edituser()
-    {  
+    {
         if($this->session->userdata('id')!='')
         {
         $this->load->model('Shopping_model');
@@ -135,6 +147,7 @@ class Shoppingcart extends CI_Controller
             redirect('Shoppingcart/main');
         }
     }
+		
     function edit()
     {
         if ($this->input->post('update'))
