@@ -1,9 +1,9 @@
 <?php
 class Shopping_model extends CI_Model
 {
-	function user_insert($name,$email,$password,$address,$pincode,$location,$gender,$mobile)
+	function user_insert($name,$email,$password,$address,$pincode,$mobile,$location,$gender)
 	{
-		$data=array('name' =>$name,'email' =>$email,'password'=>md5($password),'address' =>$address,'pincode'=>$pincode,'location'=>$location,'gender' =>$gender,'mobile'=>$mobile);
+		$data=array('name' =>$name,'email' =>$email,'password'=>md5($password),'address' =>$address,'pincode'=>$pincode,'mobile'=>$mobile,'location'=>$location,'gender' =>$gender,);
 		return $this->db->insert('user',$data);
 	}
 	function login($email,$password)
@@ -39,4 +39,4 @@ class Shopping_model extends CI_Model
 	    }
 	}
 }
-    
+?>  

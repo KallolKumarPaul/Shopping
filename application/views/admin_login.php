@@ -1,3 +1,6 @@
+<?php
+include('admin_header.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,3 +19,6 @@
 <span id="sd"></span>
 </body>
 </html>
+<?php
+include('admin_footer.php');
+?>

@@ -1,5 +1,5 @@
 <html>
-<head>
+<head> 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -12,26 +12,19 @@
     <link href="<?php echo base_url()?>public/css/animate.css" rel="stylesheet">
 	<link href="<?php echo base_url()?>public/css/main.css" rel="stylesheet">
 	<link href="<?php echo base_url()?>public/css/responsive.css" rel="stylesheet">
-	<!-- <link href="<?php echo base_url()?>public/css/style1.css" rel="stylesheet"> -->
-	<!-- <link href="<?php echo base_url()?>public/css/style.css" rel="stylesheet"> -->
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->
     <link rel="shortcut icon" href="<?php echo base_url()?>public/images/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo base_url()?>public/images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo base_url()?>public/images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo base_url()?>public/images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="<?php echo base_url()?>public/images/ico/apple-touch-icon-57-precomposed.png">
 </head><!--/head-->
-
 <body>
 		<div class="header-middle"><!--header-middle-->
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="logo pull-left">
-							<a href="index.html"><img src="<?php echo base_url()?>public/images/home/logo.png" alt="" /></a>
+							<a href="<?php echo base_url()?>"><img src="<?php echo base_url()?>public/images/home/logo.png" alt="" /></a>
 						</div>
 						<div class="btn-group pull-right">
 							<div class="btn-group">
@@ -61,9 +54,9 @@
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
-								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								<li><a href="<?php echo base_url()?>index.php/Shoppy/load_cart"><i class="fa fa-shopping-cart"></i> Cart</a></li>
 								<li><a href="<?php echo base_url()?>index.php/Shoppingcart/login"><i class="fa fa-lock"></i> Login</a></li>
-								<li><a href="<?php echo base_url()?>index.php/Shoppingcart/user_insert"><i class="fa fa-lock"></i>Sign Up</a></li>
+								<li><a href="<?php echo base_url()?>index.php/Shoppingcart/login"><i class="fa fa-lock"></i>Sign Up</a></li>
 							</ul>
 						</div>
 					</div>
@@ -88,11 +81,9 @@
 								<li><a href="<?php echo base_url()?>" class="active">Home</a></li>
 								<li class="dropdown"><a href="">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-                                        <li><a href="shop.html">Products</a></li>
-										<li><a href="product-details.html">Product Details</a></li>
-										<li><a href="checkout.html">Checkout</a></li>
-										<li><a href="cart.html">Cart</a></li>
-										<li><a href="login.html">Login</a></li>
+                                        <li><a href="<?php echo base_url()?>">Products</a></li> 
+										<li><a href="<?php echo base_url()?>index.php/Shoppy/checkout">Checkout</a></li>
+										<li><a href="<?php echo base_url()?>index.php/Shoppy/load_cart">Cart</a></li>
                                     </ul>
                                 </li>
 								<li class="dropdown"><a href="#">Sell<i class="fa fa-angle-down"></i></a>
@@ -102,7 +93,7 @@
                                     </ul>
                                 </li>
 
-								<li><a href="contact-us.html">Contact</a></li>
+								<li><a href="<?php echo base_url()?>index.php/Shoppy/contact">Contact</a></li>
 							</ul>
 						</div>
 					</div>

@@ -1,0 +1,17 @@
+body{
+  background-color: #3dea69;
+}
+img{
+  margin-left: 400px;
+  margin-bottom: 400px;
+}
+#log{
+  margin-left: 400px;
+  margin-right: 300px;
+  margin-top: -100px;
+  border-style:solid;
+}
+input{
+  width: 90%;
+  height: 25px;
+}
