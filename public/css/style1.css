@@ -95,9 +95,9 @@ margin-left: 50px;
 		border:2px solid grey;
 		padding-top: 20px;
 		padding-bottom: 20px;
-		background-color: #cbf0d4 ;
+		background-color: #8A2BE2 ;
 		border-radius: 5px;
-		box-shadow: 3px 2px 6px green;
+		/*box-shadow: 3px 2px 6px green;*/
 }
 #login-btn{
   font-size: 20px;

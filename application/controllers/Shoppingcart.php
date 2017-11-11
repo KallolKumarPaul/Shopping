@@ -21,17 +21,34 @@ class Shoppingcart extends CI_Controller
             $this->load->model('Shopping_model');
             $name=$this->input->post('name');
             $email=$this->input->post('email');
-
             $password=md5($this->input->post('password'));
             $address=$this->input->post('address');
             $pincode=$this->input->post('pincode');
             $mobile=$this->input->post('mobile');
             $location=$this->input->post('city');
             $gender=implode(",",$this->input->post('gen'));
-            
             $ins=$this->Shopping_model->user_insert($name,$email,$password,$address,$pincode,$mobile,$location,$gender);
             redirect('Shoppingcart/login');
     }
+	function myorder()
+    {
+			$this->load->model('Model2');
+			$a = $this->Model2->pre_order_info();
+            $re = '';
+			foreach ($a as $value)
+            {
+				$re .= $value['product_id'].",";
+			}
+			if($temp['order_data'] = $this->Model2->pr_info($re))
+				{
+                    $this->load->view('myorder',$temp);
+                }
+            else
+            {
+
+                $this->load->view('myorder');
+            }
+	}
     function login_user()
     {
             $this->load->model('Shopping_model');
@@ -43,8 +60,8 @@ class Shoppingcart extends CI_Controller
                 $id = $login[0]['id'];
                 $this->session->set_userdata('id',$id);
                 $msg=$this->session->set_flashdata('success','Login successfull');
-                // redirect('Shoppingcart/main');
-                $this->load->view('main');
+                redirect('Shoppingcart/profile');
+                // $this->load->view('main');
             }
             else
             {
@@ -115,14 +132,14 @@ class Shoppingcart extends CI_Controller
             $this->load->model('Shopping_model');
             $id=$this->session->userdata('id');
             $data['edituser']=$this->Shopping_model->get_profile_data($id);
+            // $this->load->view('header');
             $this->load->view('user_edit_profile',$data);
         }
         else
         {
-            redirect('Shoppingcart/main');
+            redirect('Shoppingcart/profile');
         }
     }
-		
     function edit()
     {
         if ($this->input->post('update'))
@@ -134,6 +151,7 @@ class Shoppingcart extends CI_Controller
             $location=$this->input->post('city');
             $gender=implode(",",$this->input->post('gen'));
             $mobile=$this->input->post('mobile');
+            echo $mobile;
             if($_FILES['img']=='')
             {
                 $file_name='';
@@ -144,18 +162,18 @@ class Shoppingcart extends CI_Controller
             if ( ! $this->upload->do_upload('img'))
             {
                 $error = array('error' => $this->upload->display_errors());
-                $this->load->view('user_edit_profile', $error);
+                // $this->load->view('user_edit_profile', $error);
             }
             else
             {
                 $data = array('upload_data' => $this->upload->data());
-                echo $file_name=$data['upload_data']['file_name'];
+                $file_name=$data['upload_data']['file_name'];
 
             }
             $ins=$this->Shopping_model->update($name,$address,$pincode,$location,$gender,$mobile,$file_name);
-                // echo "$ins";
-            // redirect('Shoppingcart/profile');
-                $this->load->view('main');
-       }
+                echo "$ins";
+            redirect('Shoppingcart/profile');
+                // $this->load->view('main');
+        }
     }
 }

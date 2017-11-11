@@ -40,9 +40,9 @@ $res = $this->db->get_where('seller', array('id' => $id))->result_array();
       <div class="spul">
       <ul>
 <li><a href="http://localhost/Shopping/index.php/Shoppy/profile_view">Home</a></li>
-<li><a href="#news">Edit Profile</a></li>
-<li><a class="active" href="<?php echo base_url()?>index.php/Shoppy/seller_add_item">Add Item</a></li>
-<li><a href="<?php echo base_url()?>index.php/Shoppy/analyze_seller">Analyze Account</a></li>
+<li><a href="<?php echo base_url()?>index.php/Shoppy/seller_edit">Edit Profile</a></li>
+<li><a href="<?php echo base_url()?>index.php/Shoppy/seller_add_item">Add Item</a></li>
+<li><a class="active" href="<?php echo base_url()?>index.php/Shoppy/analyze_seller">Analyze Account</a></li>
 </ul>
 </div>
       </div>

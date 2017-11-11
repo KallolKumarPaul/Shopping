@@ -17,7 +17,7 @@ else
 <meta name="keywords" content="Prominent Profile Widget Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
-		function hideURLbar(){ window.scrollTo(0,1); } </script>
+		function hideURLbar(){ window.scrollTo(0,1); } </script> 
 <!-- //custom-theme -->
 <!-- js -->
 <script src="<?php echo base_url()?>public/js12/jquery.min.js"></script>
@@ -26,7 +26,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="<?php echo base_url()?>public/css12/font-awesome.css" rel="stylesheet"> 
 <!-- //font-awesome icons -->
 <link href="<?php echo base_url()?>public/css12/style.css" rel="stylesheet" type="text/css" media="all" />
-
+<link href="<?php echo base_url()?>public/css/style1.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 <body>
 	<div class="main">
@@ -43,6 +43,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<ul class="w3_agile_nav1">
 									<!-- <li><a href="<?php echo base_url()?>">Home</a></li> -->
 									<li><a href="<?php echo base_url()?>index.php/Shoppingcart/edituser">Edit</a></li>
+									<li><a href="<?php echo base_url()?>index.php/Shoppingcart/myorder">My Order</a></li>
 									<li><a href="<?php echo base_url()?>index.php/Shoppingcart/logout">Log out</a></li>
 									
 								</ul> 	

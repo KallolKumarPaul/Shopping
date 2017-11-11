@@ -1,10 +1,10 @@
 <html> 
-<head>
+<head> 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Home | E-Shopper</title>
+    <title>Home | E-Shopper</title> 
     <link href="<?php echo base_url()?>public/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url()?>public/css/font-awesome.min.css" rel="stylesheet">
     <link href="<?php echo base_url()?>public/css/prettyPhoto.css" rel="stylesheet">
@@ -25,30 +25,18 @@
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="logo pull-left">
-							<a href="index.html"><img src="<?php echo base_url()?>public/images/home/logo.png" alt="" /></a>
+							<a href="<?php echo base_url()?>"><img src="<?php echo base_url()?>public/images/home/logo.png" alt="" /></a>
 						</div>
 						<div class="btn-group pull-right">
 							<div class="btn-group">
 								<button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
 									India
-									<span class="caret"></span>
-								</button>
-								<ul class="dropdown-menu">
-									<li><a href="#">Kolkata</a></li>
-									<li><a href="#">Mumbai</a></li>
-									<li><a href="#">Bangalore</a></li>
-								</ul>
+								</button>								
 							</div>
-
 							<div class="btn-group">
 								<button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-									Rupees
-									<span class="caret"></span>
-								</button>
-								<ul class="dropdown-menu">
-									<li><a href="#">Rupees</a></li>
-									<li><a href="#"></a></li>
-								</ul>
+									Rupees									
+								</button>								
 							</div>
 						</div>
 					</div>
@@ -88,22 +76,25 @@
 										<li><a href="<?php echo base_url()?>index.php/Shoppy/checkout">Checkout</a></li> 
                                     </ul>
                                 </li>
-								<li class="dropdown"><a href="#">Sell<i class="fa fa-angle-down"></i></a>
+								<!-- <li class="dropdown"><a href="#">Sell<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="<?php echo base_url()?>index.php/Shoppy/seller_log">Login</a></li>
 										<li><a href="<?php echo base_url()?>index.php/Shoppy/seller_signup">Registration</a></li>
                                     </ul>
-                                </li>
-
+                                </li> -->
+ 
 								<li><a href="<?php echo base_url()?>index.php/Shoppy/contact">Contact</a></li>
 							</ul>
-						</div>
+						</div> 
 					</div>
 					<div class="col-sm-3">
+					<form action="<?php echo base_url()?>/index.php/Shoppy/search" method="post">
 						<div class="search_box pull-right">
-							<input type="text" id="search" placeholder="Search"/>
+							<input type="text" name="searchtext" id="search" placeholder="Search"/> 
 						</div>
-            <div id="sear">
+            		<div id="sear">
+            		</div>
+            	</form>
 					</div>
 				</div>
 			</div>

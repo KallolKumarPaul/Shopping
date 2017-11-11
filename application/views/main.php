@@ -19,12 +19,14 @@ else
 							<li data-target="#slider-carousel" data-slide-to="1"></li>
 							<li data-target="#slider-carousel" data-slide-to="2"></li>
 						</ol>
-						<div class="carousel-inner">
+						<div class="carousel-inner"> 
 							<div class="item active">
 								<div class="col-sm-6">
+									
 									<h1><span>E</span>-SHOPPER</h1>
 									<p>Live with a modern look personality with soclicheclothing that offers women dresses online in large discounts prices and with the whole sale also.</p>
-									<button type="button" class="btn btn-default get">Get it now</button>
+									
+									
 								</div>
 
 								<div class="col-sm-6">
@@ -35,10 +37,12 @@ else
 
 							<div class="item">
 								<div class="col-sm-6">
+									
 									<h1><span>E</span>-SHOPPER</h1>
 									<h2>100% Responsive Design</h2>
 									<p>Buy what you don’t have yet, or what you really want, which can be mixed with what you already own. Buy only because something excites you, not just for the simple act of shopping.</p>
-									<button type="button" class="btn btn-default get">Get it now</button>
+									
+								
 								</div>
 								<div class="col-sm-6">
 									<img src="<?php echo base_url()?>public/images/home/girl2.jpg" class="girl img-responsive" alt="" />
@@ -48,9 +52,10 @@ else
 
 							<div class="item">
 								<div class="col-sm-6">
+									
 									<h1><span>E</span>-SHOPPER</h1>
 									<p>Online shopping gives me a reason to live for another 3-5 business days </p>
-									<button type="button" class="btn btn-default get">Get it now</button>
+									
 								</div>
 								<div class="col-sm-6">
 									<img src="<?php echo base_url()?>public/images/home/girl3.jpg" class="girl img-responsive" alt="" />
@@ -166,13 +171,13 @@ else
 								</div>
 							</div>
 						</div><!--/category-products-->
-						<div class="price-range"><!--price-range-->
-							<h2>Price Range</h2>
+						<!-- <div class="price-range"><!--price-range-->
+						<!-- 	<h2>Price Range</h2>
 							<div class="well text-center">
 								 <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2" ><br />
 								 <b class="pull-left">$ 0</b> <b class="pull-right">$ 600</b>
-							</div>
-						</div><!--/price-range-->
+							</div> -->
+						<!-- </div> /price-range-->
 
 						<div class="shipping text-center"><!--shipping-->
 							<img src="<?php echo base_url()?>public/images/home/shipping.jpg" alt="" />
@@ -184,26 +189,25 @@ else
 				<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
 						<h2 class="title text-center">Features Items</h2>
-						<?php
-
-						if(isset($product) && $product!='')
+						<?php if(isset($product) && $product!='')
 						{
 						foreach($product as $prdt)
-						{
+						{ 
 						?>
 						<div class="col-sm-4">
 							<div class="product-image-wrapper">
 								<div class="single-products">
 										<div class="productinfo text-center">
-											<img src="<?php echo base_url()?>public/upload/<?php echo $prdt['image'] ?>" alt="productImage" height=30% width=10%/>
+											<img src="<?php echo base_url()?>public/upload/<?php echo $prdt['image'] ?>" alt="productImage" height="200px" width="40px"/>
 											<h2>Rs.<?php echo $prdt['price']?></h2>
 											<p><?php echo $prdt['name']?></p>
 											<a href="<?php echo base_url().'index.php/shoppy/add_to_cart/'.$prdt['id']?>" class="btn btn-default add_to_cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 											<a href="<?php echo base_url().'index.php/shoppy/add_to_cart/'.$prdt['id']?>" class="btn btn-default add_to_cart"><i class="fa fa-shopping-cart"></i>Buy Now</a>
 											<a href="<?php echo base_url().'index.php/Shoppy/product_details_view/'.$prdt['id']?>" class="btn btn-default add_to_cart"><i class="fa fa-shopping-cart"></i>Details</a>
-										</div>
+										</div> 
 										<div class="product-overlay">
 											<div class="overlay-content">
+												<img src="<?php echo base_url()?>public/upload/<?php echo $prdt['image']; ?>" alt="productImage" height="180px" width="180px"/>
 												<h2>Rs.<?php echo $prdt['price']?></h2>
 												<p><?php echo $prdt['name']?></p>
 												<a href="<?php echo base_url().'index.php/shoppy/add_to_cart/'.$prdt['id']?>" class="btn btn-default add_to_cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -212,21 +216,20 @@ else
 											</div>
 										</div>
 								</div>
-
+								
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
 									</ul>
 								</div>
 							</div>
 						</div>
-						<?php } }
-						?>
-						<ul class="pagination">
+						<?php } }?>
+						<!-- <ul class="pagination">
 							<li class="active"><a href="">1</a></li>
 							<li><a href="">2</a></li>
 							<li><a href="">3</a></li>
 							<li><a href="">&raquo;</a></li>
-						</ul> -->
+						</ul> --> -->
 					</div><!--features_items-->
 				</div>
 			</div>

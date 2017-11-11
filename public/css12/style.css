@@ -31,7 +31,7 @@ html, body{
 	font-size: 100%;
     font-family: 'Trirong', serif;
 	/*background:#212121;*/
-	background:#f7e6dc;
+	/*background:#f7e6dc;*/
 }
 h1,h2,h3,h4,h5,h6,input,p,a,select{
 	font-family: 'Trirong', serif;
@@ -72,6 +72,7 @@ input[type="submit"],.agileits_copyright p a{
 }
 .main{
 	padding:3em 0;
+	/*background-color: black;*/
 }
 .main h1{
 	text-align: center;
@@ -88,7 +89,7 @@ input[type="submit"],.agileits_copyright p a{
     margin: 0 auto;
 }
 .w3layouts_profile_grid1{
-	background:#f7e6dc;
+	/*background:#f7e6dc;*/
 }
 .w3l_profile_grid1_padd{
 	padding:2em;
@@ -123,12 +124,12 @@ input[type="submit"],.agileits_copyright p a{
 }
 .agileits_profile h3{
 	font-size: 1.2em;
-    color: #212121;
+    color: black;
     font-weight: 600;
 }
 .agileits_profile p{
 	font-size: 14px;
-    color: #6a6969;
+    color: black;
     letter-spacing: 2px;
     line-height: 1.8em;
 }

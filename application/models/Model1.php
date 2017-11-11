@@ -5,17 +5,23 @@ class Model1 extends CI_Model{
     $a = $this->db->query($query)->result_array();
     return $a;
   }
-
+ 
   function insert($name, $email, $password){
     $data = array('name' => $name, 'email'=>$email, 'password'=>$password);
     $a = $this->db->insert('seller',$data);
     return $a;
   }
-
-  function search_result($data){
+  function search_result($data)
+  { 
     $this->db->like('name', $data);
     $res = $this->db->get('product')->result_array();
-    return $res;
+    return $res; 
+  }
+  function search($search)
+  {
+    $query="SELECT * from product WHERE name LIKE '%$search%'";
+    $a=$this->db->query($query)->result_array();
+    return $a;
   }
   function get_log($email, $password){
       $query = "SELECT password,id FROM seller WHERE email='$email'";

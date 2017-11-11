@@ -10,6 +10,7 @@ class Admin_model extends CI_Model
 	function adminlogin($email,$password)
 	{
 		$data=array('email' =>$email ,'password'=>$password);
+
 		// return 1;
 		return $this->db->get_where('admin',$data)->result_array();
 	}
@@ -48,6 +49,19 @@ class Admin_model extends CI_Model
 	function all_user(){
 		$qry="SELECT * FROM `user`";
 		return $this->db->query($qry)->result_array();
+	}
+	function get_delivery_report($id,$status){
+		// echo $id;
+		// echo $status;
+		// $qry="UPDATE user_order SET status=(case when status=0 then 1 else 2 end) WHERE id='$id'"; 
+		$qry="update user_order ";
+		if($status==0)
+			$qry.="set status=1 ";
+		else{
+			$qry.="set status=2 ";
+		}
+		$qry.="where id='$id'";
+		return $this->db->query($qry);
 	}
 }
 ?>

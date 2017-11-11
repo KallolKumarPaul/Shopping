@@ -1,9 +1,9 @@
 <html>
-<head> 
+<head>  
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content=""> 
     <title>Home | E-Shopper</title>
     <link href="<?php echo base_url()?>public/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url()?>public/css/font-awesome.min.css" rel="stylesheet">
@@ -18,7 +18,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo base_url()?>public/images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="<?php echo base_url()?>public/images/ico/apple-touch-icon-57-precomposed.png">
 </head><!--/head-->
-<body>
+<body> 
 		<div class="header-middle"><!--header-middle-->
 			<div class="container">
 				<div class="row">
@@ -30,25 +30,14 @@
 							<div class="btn-group">
 								<button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
 									India
-									<span class="caret"></span>
-								</button>
-								<ul class="dropdown-menu">
-									<li><a href="#">Kolkata</a></li>
-									<li><a href="#">Mumbai</a></li>
-									<li><a href="#">Bangalore</a></li>
-								</ul>
+								</button>								
 							</div>
-
 							<div class="btn-group">
 								<button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-									Rupees
-									<span class="caret"></span>
-								</button>
-								<ul class="dropdown-menu">
-									<li><a href="#">Rupees</a></li>
-									<li><a href="#"></a></li>
-								</ul>
+									Rupees									
+								</button>								
 							</div>
+						
 						</div>
 					</div>
 					<div class="col-sm-8">
@@ -82,7 +71,7 @@
 								<li class="dropdown"><a href="">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="<?php echo base_url()?>">Products</a></li> 
-										<li><a href="<?php echo base_url()?>index.php/Shoppy/checkout">Checkout</a></li>
+										<!-- <li><a href="<?php echo base_url()?>index.php/Shoppy/checkout">Checkout</a></li> -->
 										<li><a href="<?php echo base_url()?>index.php/Shoppy/load_cart">Cart</a></li>
                                     </ul>
                                 </li>
@@ -98,10 +87,12 @@
 						</div>
 					</div>
 					<div class="col-sm-3">
+						<form action="<?php echo base_url()?>/index.php/Shoppy/search" method="post"> 
 						<div class="search_box pull-right">
-							<input type="text" id="search" placeholder="Search"/>
+							<input type="text" id="search" name="searchtext" placeholder="Search"/>
 						</div>
-            <div id="sear">
+            <div id="sear"> 
+            	</form>
 					</div>
 				</div>
 			</div>

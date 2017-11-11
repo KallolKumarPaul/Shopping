@@ -9,8 +9,6 @@ else
 ?>
 <!DOCTYPE html>
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-         
-        
         <title>Bootply snippet - Edit profile form</title>
         <meta name="generator" content="Bootply">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -19,29 +17,22 @@ else
         <link rel="apple-touch-icon" href="https://www.bootply.com/bootstrap/img/apple-touch-icon.png">
         <link rel="apple-touch-icon" sizes="72x72" href="https://www.bootply.com/bootstrap/img/apple-touch-icon-72x72.png">
         <link rel="apple-touch-icon" sizes="114x114" href="https://www.bootply.com/bootstrap/img/apple-touch-icon-114x114.png">
-
-<link href="<?php echo base_url()?>public/css13/font-awesome.min.css" type="text/css" rel="stylesheet">
-        <!-- CSS code from Bootply.com editor -->
-        
+        <link href="<?php echo base_url()?>public/css13/font-awesome.min.css" type="text/css" rel="stylesheet">
         <style type="text/css">
-            /* CSS used here will be applied after bootstrap.css */
         </style>
     <script id="_carbonads_projs" type="text/javascript" src="<?php echo base_url()?>public/js13/C6AILKT.json"></script></head>
-    
-    <!-- HTML code from Bootply.com editor -->
-    
-    <body style="">
-      <?php
-        if(isset($edituser) && count($edituser)!=0)
+<body style="">
+<?php
+if(isset($edituser) && count($edituser)!=0)
 {
 foreach($edituser as $val)
 {
   $g=explode(",",$val['gender']);?>
-   <form class="form-horizontal" role="form" action="<?php echo base_url()?>index.php/Shoppingcart/edit" method="post" enctype="multipart/form-data">
+   <form action="<?php echo base_url()?>index.php/Shoppingcart/edit" method="post" enctype="multipart/form-data">
         <div class="container">
     <h1>Edit Profile</h1>
-  	<hr>
-	<div class="row">
+    <hr>
+  <div class="row">
       <!-- left column -->
       <div class="col-md-3">
         <div class="text-center">
@@ -50,7 +41,7 @@ foreach($edituser as $val)
           <input type="file" name="img"/>
         </div>
       </div>
-        <h1>Personal info</h1>
+        <h1>Personal info</h1> 
         <div class="form-group">
             <label class="col-lg-3 control-label"></label>
             <div class="col-lg-8">

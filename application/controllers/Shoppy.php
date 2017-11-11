@@ -144,27 +144,46 @@
     }
     function load_cart()
     {
-      $this->load->helper('cookie');
-      if($this->session->userdata('id')!=''){
+    if($this->session->userdata('id')!=''){
       $this->load->model('Model2');
       $order_data['data'] = $this->Model2->get_details();
       $this->load->view('cart',$order_data);
     }
-    else{
+    else if($this->session->userdata('product_id')!=''){
       $a = $this->session->userdata('product_id');
       $this->load->model('Model2');
       $order_data['data'] = $this->Model2->details_unlogged($a);
       $this->load->view('cart',$order_data);
     }
+    else{
+    $this->load->view('cart');
+    }
     }
     function order()
     {
+      $this->load->model('Model2');
+      if($this->session->userdata('product_id')!=''){
+        $ids = $this->session->userdata('product_id');
+        $name = $this->input->post('name');
+        $add1 = $this->input->post('address1');
+        $add2 = $this->input->post('address2');
+        $phone = $this->input->post('phone');
+        $a = $this->Model2->order_confirm_unlogged($ids, $name, $add1, $add2, $phone);
+        // $this->Model2->delete($ids);
+        $this->session->unset_userdata('product_id');
+        if($a == 1)
+        {
+          $this->session->set_flashdata('order_msg',"Order Confirmed");
+          redirect('Shoppy/load_cart');
+
+        }
+      }
+      else{
       $name = $this->input->post('name');
       $add1 = $this->input->post('address1');
       $add2 = $this->input->post('address2');
       $phone = $this->input->post('phone');
       $user_id = $this->session->userdata('id');
-      $this->load->model('Model2');
       $product_details = $this->Model2->get_details();
       foreach ($product_details as $value)
       {
@@ -176,23 +195,19 @@
       {
         $this->session->set_flashdata('order_msg',"Order Confirmed");
         redirect('Shoppy/load_cart');
+        // $this->load->view('cart');
       }
-    }
 
+    }
+    }
     function delete_item($p_id)
     {
       if($this->session->userdata('product_id')!=''){
         $a = $this->session->userdata('product_id');
-        if (($key = array_search($p_id, $a)) !== false) {
-            unset($a[$key]);
-          }
-          $b = count($a);
-          if($b==1){
-            $this->session->unset_userdata('product_id');
-            redirect('Shoppy/load_cart');
-          }
-        $this->session->unset_userdata('product_id');
-        $this->session->set_userdata('product_id',$a);
+        $array = explode(',',$a);
+        $array = array_diff($array,array($p_id));
+        $c = implode(',',$array);
+        $this->session->set_userdata('product_id',$c);
           redirect('Shoppy/load_cart');
       }
       else{
@@ -206,22 +221,43 @@
       $this->session->sess_destroy();
       redirect('Shoppy/seller_log');
     }
-
     function search_data()
     {
       $data = $this->input->post('data');
       $this->load->model('model1');
       $result = $this->model1->search_result($data);
       foreach ($result as $value)
-      {
-        echo $value['name'];
+      {?>
+        <div><?php echo $value['name'];?></div>
+        <?php echo "<br>";
       }
     }
-
-    function search_view()
+    function search()
     {
-      $this->load->view('search');
+        $this->load->model('Model1');
+        $search=$this->input->post('searchtext');
+        $data['search']=$this->Model1->Search($search);
+        $this->load->view('search',$data);
+
     }
+    // function search_data1()
+    // {
+    //   $data = $this->input->post('data1');
+    //   $this->load->model('model1');
+    //   $result = $this->model1->search_result($data);
+    //   foreach ($result as $value)
+    //   {
+    //     <div><?php echo $value['name'];
+    //     <?php echo "<br>";
+    //   }
+    // }
+    // function search11()
+    // {
+    //     $this->load->model('Model1');
+    //     $search=$this->input->post('searchtext11');
+    //     $data['search1']=$this->Model1->Search($search);
+    //     $this->load->view('search',$data);
+    // }
     function add_item()
     {
       $this->load->view('product');
@@ -267,7 +303,7 @@
     {
       $name = $this->input->post('name');
       $email = $this->input->post('email');
-      $password = $this->input->post('password');
+      $password =md5($this->input->post('password'));
       $this->load->model('Model1');
       $status = $this->Model1->insert($name, $email, $password);
       if($status == 0)
@@ -327,8 +363,15 @@
     function checkout()
     {
       $this->load->model('Model2');
+      if($this->session->userdata('product_id')!=''){
+        $pd = $this->session->userdata('product_id');
+          $order_data['data'] = $this->Model2->details_unlogged($pd);
+          $this->load->view('checkout',$order_data);
+      }
+      else{
       $order_data['data'] = $this->Model2->get_details();
       $this->load->view('checkout',$order_data);
+      }
     }
     function contact()
     {

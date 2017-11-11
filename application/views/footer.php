@@ -15,15 +15,13 @@
 					</div>
 				</div>
 			</div>
-<div class="footer1">
+<!-- <div class="footer1">
 			<h2>Service</h2>
 			<div id="m1">
 				<div id="li1"><a href="http://localhost/Shopping/index.php/Chatbot">Online Help</a></div>
-				<div id="li2"><a href="#">Contact Us</a></div>
-				<div id="li3"><a href="#">Order Status</a></div>
-				<div id="li4"><a href="#">Change Location</a></div>
-				<div id="li5"><a href="#">FAQ’s</a></div>
-</div>
+				<div id="li2"><a href="<?php echo base_url()?>index.php/Shoppy/contact">Contact Us</a></div>
+				<div id="li3"><a href="<?php echo base_url()?>index.php/Shoppingcart/myorder">My Order Status</a></div>
+</div> -->
 		</div>
 		<!--
 			<div class="container">

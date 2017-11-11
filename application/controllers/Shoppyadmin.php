@@ -42,6 +42,7 @@ class Shoppyadmin extends CI_Controller
         $email=$this->input->post('email');
         $password=md5($this->input->post('password'));
         $login=$this->Admin_model->adminlogin($email,$password);
+        // print_r($login);die;
         if(count($login)==1)
         {
         $id = $login[0]['id'];
@@ -52,7 +53,7 @@ class Shoppyadmin extends CI_Controller
         else
         {
         echo $msg1=$this->session->set_flashdata('error','Login faild');
-        redirect('Shoppyadmin/admin_view');
+        redirect('Shoppyadmin');
         }
     }
     function admin_logout()
@@ -97,5 +98,11 @@ class Shoppyadmin extends CI_Controller
         $this->load->model('Admin_model');
         $u['user']=$this->Admin_model->all_user();
         $this->load->view('admin_alluser',$u);
+    }
+    function delivery_action($id,$status){
+        $this->load->model('Admin_model');
+        $u=$this->Admin_model->get_delivery_report($id,$status);
+        // print_r($u['delivery_report']);
+        redirect('Shoppyadmin/admin_allorder');
     }
 }

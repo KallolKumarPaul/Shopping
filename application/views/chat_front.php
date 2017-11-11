@@ -1,4 +1,12 @@
-
+<?php
+if ($this->session->userdata('id')!='') {
+	include('header.php');
+}
+else
+{
+	include('header_logout.php');
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,3 +41,6 @@
 	</style>
 </body>
 </html>
+<?php
+include('footer.php');
+?>

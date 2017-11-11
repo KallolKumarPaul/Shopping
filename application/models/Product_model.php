@@ -3,7 +3,7 @@ class Product_model extends CI_Model
 { 
   function get_product()
   {
-    $query = "SELECT * FROM product";
+    $query = "SELECT * FROM product ORDER By RAND() limit 10 "; 
     $a = $this->db->query($query)->result_array();
     return $a;
   }

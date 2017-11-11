@@ -44,7 +44,7 @@ include('admin_header.php');
                     </td>
                     <td><img src='".base_url()."public/upload/".$s['image']."' height='100px' width='200px'>
                     </td>
-                     <td><a href=".base_url()."index.php/Shoppyadmin/delete_product/".$s['id'].">Delete</a>
+                     <td><a href=".base_url()."index.php/Shoppyadmin/block_user/".$s['id'].">Block</a>
                     </td>
                     </tr>";
             }?>

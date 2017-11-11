@@ -1,3 +1,12 @@
+<?php
+if ($this->session->userdata('id')!='') {
+	include('header.php');
+}
+else
+{
+	include('header_logout.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,15 +32,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo base_url()?>public/images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="<?php echo base_url()?>public/images/ico/apple-touch-icon-57-precomposed.png">
 </head><!--/head-->
-<?php
-if ($this->session->userdata('id')!='') {
-	include('header.php');
-}
-else
-{
-	include('header_logout.php');
-}
-?>
+
 	<section id="cart_items">
 		<div class="container">
 			<div class="breadcrumbs">
@@ -41,7 +42,7 @@ else
 				</ol>
 			</div><!--/breadcrums-->
 
-			<div class="step-one">
+			<!-- <div class="step-one">
 				<h2 class="heading">Step1</h2>
 			</div>
 			<div class="checkout-options">
@@ -58,10 +59,10 @@ else
 						<a href=""><i class="fa fa-times"></i>Cancel</a>
 					</li>
 				</ul>
-			</div><!--/checkout-options-->
+			</div>/checkout-options-->
 
 			<div class="register-req">
-				<p>Please use Register And Checkout to easily get access to your order history, or use Checkout as Guest</p>
+				<h4>Please use Register And Checkout to easily get access to your order history</h4>
 			</div><!--/register-req-->
 
 			<div class="shopper-informations">
@@ -119,7 +120,6 @@ else
             foreach($data as $dt){
               $sub = $sub + $dt['price'];
             ?>
-
 					<tbody>
 						<tr>
 							<td class="cart_product">
@@ -168,7 +168,7 @@ else
 									</tr>
 									<tr>
 										<td>Total</td>
-										<td><span><?php $sub?></span></td>
+										<td><span><?php echo $sub?></span></td>
 									</tr>
 								</table>
 							</td>
@@ -177,7 +177,7 @@ else
 				</table>
 			</div>
 
-			<div class="payment-options">
+			<!-- <div class="payment-options">
 					<span>
 						<label><input type="checkbox"> Direct Bank Transfer</label>
 					</span>
@@ -188,7 +188,7 @@ else
 						<label><input type="checkbox"> Paypal</label>
 					</span>
 				</div>
-		</div>
+		</div> -->
 	</section> <!--/#cart_items-->
 <?php
 include('footer.php');

@@ -62,7 +62,7 @@ else
 							<p>Vasundhara Complex NP-9, Sector5, SaltLake, Kolkata -102</p>
 							<p>Technopolish,Sector 5,Saltlake</p>
 							<p>Mobile:+91 90888 47921,+91 83489 10015,+91 9830111354,+91 9830880416,+91 98511 45410</p>
-							<p>Email: b.p.kallolkumar@gmail.com,sagar03d@gmail.com</p>
+							<p>Email: eshop@eshopper.co.in</p>
 	    				</address>
 	    				<div class="social-networks">
 	    					<h2 class="title text-center">Social Networking</h2>

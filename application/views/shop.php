@@ -9,11 +9,11 @@ else
 ?>
 <!DOCTYPE html>
 <html lang="en">
-	<section id="slider"><!--slider-->
-		<div class="container">
+	<!-- <section id="slider"><!--slider-->
+		<!-- div class="container">
 			<div class="row">
-				<div class="col-sm-12">
-					<div id="slider-carousel" class="carousel slide" data-ride="carousel">
+				<div class="col-sm-12"> --> 
+					<!-- <div id="slider-carousel" class="carousel slide" data-ride="carousel">
 						<ol class="carousel-indicators">
 							<li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
 							<li data-target="#slider-carousel" data-slide-to="1"></li>
@@ -23,21 +23,21 @@ else
 							<div class="item active">
 								<div class="col-sm-6">
 									<h1><span>E</span>-SHOPPER</h1>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+									<p>Live with a modern look personality with soclicheclothing that offers women dresses online in large discounts prices and with the whole sale also.</p>
 									<button type="button" class="btn btn-default get">Get it now</button>
-								</div>
+								</div> 
 
 								<div class="col-sm-6">
 									<img src="<?php echo base_url()?>public/images/home/girl2.jpg" class="girl img-responsive" alt="" />
 									<img src="<?php echo base_url()?>public/images/home/pricing.png"  class="pricing" alt="" />
 								</div>
 							</div>
-
-							<div class="item">
+ -->
+				<!-- 			<div class="item">
 								<div class="col-sm-6">
 									<h1><span>E</span>-SHOPPER</h1>
 									<h2>100% Responsive Design</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+									<p>Buy what you don’t have yet, or what you really want, which can be mixed with what you already own. Buy only because something excites you, not just for the simple act of shopping.</p>
 									<button type="button" class="btn btn-default get">Get it now</button>
 								</div>
 								<div class="col-sm-6">
@@ -49,7 +49,7 @@ else
 							<div class="item">
 								<div class="col-sm-6">
 									<h1><span>E</span>-SHOPPER</h1>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+									<p>Online shopping gives me a reason to live for another 3-5 business days </p>
 									<button type="button" class="btn btn-default get">Get it now</button>
 								</div>
 								<div class="col-sm-6">
@@ -71,8 +71,8 @@ else
 				</div>
 			</div>
 		</div>
-	</section><!--/slider-->
-
+	</section><!--/slider--> -->
+ 
 	<section>
 		<div class="container">
 			<div class="row">
@@ -168,14 +168,14 @@ else
 						</div><!--/category-products-->
 
 
-
-						<div class="price-range"><!--price-range-->
+<!-- 
+						<div class="price-range">
 							<h2>Price Range</h2>
 							<div class="well text-center">
 								 <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2" ><br />
 								 <b class="pull-left">$ 0</b> <b class="pull-right">$ 600</b>
 							</div>
-						</div><!--/price-range-->
+						</div> -->
 
 						<div class="shipping text-center"><!--shipping-->
 							<img src="<?php echo base_url()?>public/images/home/shipping.jpg" alt="" />
@@ -194,7 +194,7 @@ else
 							<div class="product-image-wrapper">
 								<div class="single-products">
 										<div class="productinfo text-center">
-											<img src="<?php echo base_url()?>public/upload/<?php echo $value['image']; ?>" height=30% width=10%/>
+											<img src="<?php echo base_url()?>public/upload/<?php echo $value['image']; ?>" height="200px" width="40px"/>
 											<h2>Rs.<?php echo $value['price'];?></h2>
 											<p><?php echo $value['name'];?></p>
 											<a href="<?php echo base_url().'index.php/shoppy/add_to_cart/'.$value['id']?>" class="btn btn-default add_to_cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -203,7 +203,7 @@ else
 										</div>
 										<div class="product-overlay">
 											<div class="overlay-content">
-												<img src="<?php echo base_url()?>public/upload/<?php echo $value['image']; ?>" height=60% width=60%/>
+												<img src="<?php echo base_url()?>public/upload/<?php echo $value['image']; ?>" height="180px" width="200px"/>
 												<h2>Rs.<?php echo $value['price']?></h2>
 												<p><?php echo $value['name']?></p>
 												<a href="<?php echo base_url().'index.php/shoppy/add_to_cart/'.$value['id']?>" class="btn btn-default add_to_cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>

@@ -50,7 +50,7 @@
               <!-- Navbar Menu -->
               <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
                 <!-- Search-->
-                <li class="nav-item d-flex align-items-center"><a id="search" href="#"><i class="icon-search"></i></a></li>
+               <!--  <li class="nav-item d-flex align-items-center"><a id="search" href="#"><i class="icon-search"></i></a></li> -->
                 
                 <!-- Logout    -->
                 <li class="nav-item"><a href="<?php echo base_url()?>index.php/Shoppyadmin/admin_logout" class="nav-link logout">Logout<i class="fa fa-sign-out"></i></a></li>
@@ -84,21 +84,26 @@
             </li>
           </ul>
         </nav>
-
-        <h1>All Orders</h1>
-        <br>
-        <br>
         <table border="2">
             <tr>
                 <th>Id</th>
-                <th>User Id</th>
                 <th>User Name</th>
-                <th>Product Name</th>
-                <!-- <th colspan="2">Action</th> -->
+                <th>Product ID</th>
+                <th>Address</th>
+                <th colspan="2">Action</th>
             </tr>
 
 <?php
 foreach($order as $d){
+  
+  $a=$this->db->query("SELECT status from `user_order` where id=$d[id]")->result_array();
+  if($a[0]['status']==0)
+    $status="Approved";
+  else if($a[0]['status']==1)
+    $status="Out for Delivery";
+  else
+    $status="Delivered";
+  // print_r($a);die;
             echo "<tr>
                     <td>
                     ".$d['id']."
@@ -112,7 +117,8 @@ foreach($order as $d){
                     <td>
                     ".$d['address']."
                     </td>
-                    
+                    <td>
+                     <span><a href=".base_url()."index.php/Shoppyadmin/delivery_action/".$d['id']."/".$a[0]['status'].">".$status."</a></span>
                     </tr>";
             }
             ?>
